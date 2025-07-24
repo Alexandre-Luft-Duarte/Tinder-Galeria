@@ -1,12 +1,7 @@
-import './App.css'
+import React from "react";
 
-function App() {
+import RouteManager from "../src/_config/routes/RouteManager";
 
-  return (
-    <>
-      
-    </>
-  )
+export default function App() {
+  return <RouteManager />
 }
-
-export default App
