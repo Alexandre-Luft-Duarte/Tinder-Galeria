@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 import Form from "../../components/form/Form";
+import styles from "./Login.module.css";
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,7 +16,7 @@ export default function Login() {
     }
 
  return (
-    <div>
+    <div className={styles.containerLogin}>
         <h2>Login</h2>
         <Form 
             email={email}
@@ -22,6 +24,7 @@ export default function Login() {
             password={password}
             setPassword={setPassword}
             handleSubmit={handleSubmit}
+
         />
     </div>
  );

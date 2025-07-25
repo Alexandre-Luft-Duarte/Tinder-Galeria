@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 
+import styles from "./Form.module.css"
+
 export default function Form({ email, setEmail, password, setPassword, handleSubmit }) {
+
     return(
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input 
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <label htmlFor="email">Email:</label>
+                <input 
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={email}
+                    placeholder="Write your email"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            <label htmlFor="password">Password:</label>
+                <input 
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={password}
+                    placeholder="Write your password"
+                    onChange={(e) => setPassword(e.target.value)}
+                />
             <button type="submit">Login</button>
         </form>
     );

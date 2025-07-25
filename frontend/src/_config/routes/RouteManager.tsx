@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
 import Login from "../../pages/login/Login";
 import Root from "../../components/root/Root";
+import Choose from "../../pages/choose/Choose";
 
-const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/"  element={<Root />}>
-        <Route path="login" element={<Login /> } />
-    </Route>
-))
+export default function App() {
 
-export default function RouteManager() {
-    return(
-        <RouterProvider router={router}/>
-    );
+    const router = createBrowserRouter(createRoutesFromElements(
+        <Route path="/"  element={<Root />}>
+            <Route path="login" element={<Login /> } />
+            <Route path="Choose" element={<Choose />}/>
+        </Route>
+    ))
+
+  return <RouterProvider router={router}/>
 }
