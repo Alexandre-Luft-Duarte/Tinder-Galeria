@@ -8,7 +8,7 @@ import Choose from "../../pages/choose/Choose";
 export default function App() {
 
     const router = createBrowserRouter(createRoutesFromElements(
-        <Route path="/"  element={<Root />}>
+        <Route path="/" element={<Root />}>
             <Route path="login" element={<Login /> } />
             <Route path="Choose" element={<Choose />}/>
         </Route>
