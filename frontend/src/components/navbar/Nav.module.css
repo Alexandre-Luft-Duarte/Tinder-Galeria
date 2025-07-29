@@ -1,5 +1,21 @@
 .containerNav {
-    border: 1px solid red;
-    text-align: center;
-    
+    border: 1px solid;
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+
+.linksContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.linksContainer a {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.titleContainer {
+    color: var(--dark);
+    margin-left: 500px;
 }
