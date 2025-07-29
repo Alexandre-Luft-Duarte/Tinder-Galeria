@@ -1,8 +1,11 @@
+import { ConstIconInterface } from "../interfaces/Interface";
+
 import { VscAttach } from "react-icons/vsc";
 import { VscChromeClose } from "react-icons/vsc";
 import { VscCheck } from "react-icons/vsc";
 import { VscChevronRight } from "react-icons/vsc";
 import { VscChevronLeft } from "react-icons/vsc";
+import colros from "../images/colros.png";
 
 
 const constIcons = [
@@ -25,7 +28,11 @@ const constIcons = [
     {
         name: "arrowLeft",
         component: <VscChevronLeft />,
+    },
+    {
+        name: "imgExemplo",
+        src: colros,
     }
-]
+];
 
 export default constIcons;

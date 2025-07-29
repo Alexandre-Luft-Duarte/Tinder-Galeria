@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import styles from "./Form.module.css"
-import { FormPropsInterface } from "../../_config/interfaces/interface";
+import { FormPropsInterface } from "../../_config/interfaces/Interface";
 
 export default function Form({ email, setEmail, password, setPassword, handleSubmit }: FormPropsInterface) {
 
