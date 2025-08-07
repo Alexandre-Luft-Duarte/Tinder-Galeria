@@ -19,6 +19,17 @@ export interface FormPropsInterface {
     password: string;
     setPassword: Dispatch<SetStateAction<string>>;
     handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+
+}
+
+export interface DataUsers {
+    id: string;
+    email: string;
+    password: string;
+}
+
+export interface LoginProps {
+    users: DataUsers[];
 }
 
 

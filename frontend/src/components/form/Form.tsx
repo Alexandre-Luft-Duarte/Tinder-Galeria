@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
 import styles from "./Form.module.css"
 import { FormPropsInterface } from "../../_config/interfaces/Interface";
 
-export default function Form({ email, setEmail, password, setPassword, handleSubmit }: FormPropsInterface) {
+const Form = forwardRef({ email, setEmail, password, setPassword, handleSubmit }: FormPropsInterface, ref) => {
 
     return(
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -15,6 +15,7 @@ export default function Form({ email, setEmail, password, setPassword, handleSub
                     value={email}
                     placeholder="Write your email"
                     onChange={(e) => setEmail(e.target.value)}
+                    refUserEmail={refUserEmail}
                 />
             <label htmlFor="password">Password:</label>
                 <input 
@@ -24,9 +25,12 @@ export default function Form({ email, setEmail, password, setPassword, handleSub
                     value={password}
                     placeholder="Write your password"
                     onChange={(e) => setPassword(e.target.value)}
+                    refUserPassword={refUserPassword}
                 />
             <button type="submit">Login</button>
         </form>
     );
-}
+})
+
+export default Form;
 
