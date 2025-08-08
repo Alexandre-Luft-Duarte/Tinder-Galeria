@@ -1,27 +1,22 @@
-import React, { useState, FormEvent, useRef } from "react";
+import React, { FormEvent, useRef } from "react";
 
-import Form from "../../components/form/Form";
+import Form, { FormHandle } from "../../components/form/Form";
 import styles from "./Login.module.css";
-import ShowUsers  from "../../components/showUsers/ShowUsers";
-import { LoginProps } from "../../_config/interfaces/Interface";
+import { DataUsers, LoginProps } from "../../_config/interfaces/Interface";
 import { postUsers } from "../../services/api";
 
-export default function Login({ users, getUsers }: LoginProps) {
-    
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+export default function Login({ getUsers }: LoginProps) {
 
-    const emailInputRef = useRef<HTMLInputElement>(null);
+    const formRef = useRef<FormHandle>(null); 
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleSubmit = async (formData: Omit<DataUsers, "id">) => {
         try {
-            await postUsers({ email, password });
-            setEmail('');
-            setPassword('');
+            await postUsers(formData);
+            alert('Usuário criado!');
             await getUsers();    
+            formRef.current?.clear();
         } catch(error) {
-            console.log("Erro ao criar usuário");
+            console.log("Erro ao criar usuário", error);
         }
     }
 
@@ -29,19 +24,10 @@ export default function Login({ users, getUsers }: LoginProps) {
     <div>
         <div className={styles.containerLogin}>
             <h2>Login</h2> 
-            <Form 
-                email={email}
-                setEmail={setEmail}
-                password={password}
-                setPassword={setPassword}
-                handleSubmit={handleSubmit}
-                ref={emailInputRef}
-            />
+            <Form onSubmit={handleSubmit} ref={formRef}>
+                Login
+            </Form>
         </div>
-        <div>
-            <ShowUsers users={users}/>
-        </div>
-
     </div>
  );
 }

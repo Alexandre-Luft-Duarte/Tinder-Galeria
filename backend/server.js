@@ -11,41 +11,57 @@ app.use(cors());
 
 
 app.get("/usuarios", async (req, res) => {
-    const users = await prisma.user.findMany();
-    res.status(200).json(users);
+    try {
+        const users = await prisma.user.findMany();
+        res.status(200).json(users);
+    } catch (error) {
+        console.log("Erro ao buscar dados dos usuários", error);
+    }
 })
 
 app.post("/usuarios", async (req, res) => {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    await prisma.user.create({
-        data: {
-            email: req.body.email,
-            password: hashedPassword
-        }
-    })
-    res.status(201).json(req.body); 
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        await prisma.user.create({
+            data: {
+                email: req.body.email,
+                password: hashedPassword
+            }
+        })
+        res.status(201).json(req.body); 
+    } catch (error) {
+        console.log("Erro ao criar usuário", error);
+    }
 })
 
 app.put("/usuarios/:id", async (req, res) => {
-    await prisma.user.update({
-        where: {
-            id: req.params.id
-        },
-        data: {
-            email: req.body.email,
-            password: req.body.password     
-        }
-    })
-    res.status(200).json(req.body); 
+    try {
+        await prisma.user.update({
+            where: {
+                id: req.params.id
+            },
+            data: {
+                email: req.body.email,
+                password: req.body.password     
+            }
+        })
+        res.status(200).json(req.body); 
+    } catch (error) {
+        console.log("Erro ao editar dados do usuário", error);
+    }
 })
 
 app.delete("/usuarios/:id", async (req, res) => {
-    await prisma.user.delete({
-        where: {
-            id: req.params.id
-        }
-    })
-    res.status(200).json({message: "Usuários excluido com sucesso!"});
+    try {
+        await prisma.user.delete({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json({message: "Usuários excluido com sucesso!"});
+    } catch (error) {
+        console.log("Erro ao deleter usuário", error);
+    }
 })
 
-app.listen(3000)
+app.listen(3000);

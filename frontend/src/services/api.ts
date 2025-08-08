@@ -10,8 +10,13 @@ export default apiClient;
 
 
 export const getUsers = async (): Promise<DataUsers[]> => {
+    try {
         const response = await apiClient.get("/usuarios");
         return response.data;
+    }  catch (error) {
+        console.log("Erro ao resgatar dados dos usuários", error);
+        throw error;
+    }
 };
 
 
@@ -23,5 +28,5 @@ export const postUsers = async (userData: Omit<DataUsers, 'id'>): Promise<DataUs
         console.error("Erro ao criar usuário", error);
         throw error;
     }
-}
+};
     

@@ -1,36 +1,54 @@
-import React, { forwardRef } from "react";
+import React, { FormEvent, useState, forwardRef, useImperativeHandle } from "react";
 
 import styles from "./Form.module.css"
+import Button from "../button/Button";
 import { FormPropsInterface } from "../../_config/interfaces/Interface";
 
-const Form = forwardRef<HTMLInputElement, FormPropsInterface>(({ email, setEmail, password, setPassword, handleSubmit }: FormPropsInterface, ref) => {
+export interface FormHandle {
+    clear: () => void;
+}
+
+const Form = forwardRef<FormHandle, FormPropsInterface>(({ onSubmit, children }, ref) => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        onSubmit({ email, password });
+    }
+
+    const clearInput = () => {
+        setEmail('');
+        setPassword('');
+    };
+
+    useImperativeHandle(ref, () => ({
+        clear: clearInput,
+    }));
 
     return(
         <form onSubmit={handleSubmit} className={styles.form}>
             <label htmlFor="email">Email:</label>
                 <input 
                     type="email"
-                    name="email"
-                    id="email"
                     value={email}
                     placeholder="Write your email"
                     onChange={(e) => setEmail(e.target.value)}
-                    ref={ref}
                 />
             <label htmlFor="password">Password:</label>
                 <input 
                     type="password"
-                    name="password"
-                    id="password"
                     value={password}
                     placeholder="Write your password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
-            <button type="submit">Login</button>
+            <Button typeButton="submit">
+                {children}
+            </Button>
         </form>
     );
 });
-
 
 export default Form;
 

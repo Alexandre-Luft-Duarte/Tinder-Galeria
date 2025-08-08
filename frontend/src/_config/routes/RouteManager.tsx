@@ -9,13 +9,11 @@ import Choose from "../../pages/choose/Choose";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
 import Login from "../../pages/login/Login";
+import Register from "../../pages/register/Register";
 
 export default function App() {
 
     const [users, setUsers] = useState<DataUsers[]>([]);
-
-    // const inputEmail = useRef(null);
-    // const inputPassword = useRef(null);
 
     async function handleGetUsers(){
         try {
@@ -33,8 +31,9 @@ export default function App() {
 
     const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={<Root />}>
-            <Route path="choose" element={<Choose />}/>
             <Route path="login" element={<Login users={users} getUsers={handleGetUsers}/>}/>
+            <Route path="register" element={<Register />} />
+            <Route path="choose" element={<Choose />}/>
             <Route path="about" element={<About />}/>
             <Route path="contact" element={<Contact />}/>
         </Route>

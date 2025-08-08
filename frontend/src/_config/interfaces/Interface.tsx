@@ -13,18 +13,15 @@ export interface ConstIconInterface {
     component?: ReactNode;
 }
 
-export interface FormPropsInterface {
-    email: string;
-    setEmail: Dispatch<SetStateAction<string>>;
-    password: string;
-    setPassword: Dispatch<SetStateAction<string>>;
-    handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
-}
-
 export interface DataUsers {
     id: string;
     email: string;
     password: string;
+}
+
+export interface FormPropsInterface {
+    onSubmit: (data: Omit<DataUsers, 'id'>) => void;
+    children: ReactNode;
 }
 
 export interface LoginProps {
@@ -36,6 +33,10 @@ export interface ShowUsersProps {
     users: DataUsers[];
 }
 
+export interface ButtonProps {
+    children: ReactNode;
+    typeButton?: 'submit' | "button" | "reset";
+}
 
 
 
