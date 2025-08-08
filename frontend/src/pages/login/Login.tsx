@@ -1,34 +1,41 @@
-import React, { useState, FormEvent, forwardRef } from "react";
+import React, { useState, FormEvent, useRef } from "react";
 
 import Form from "../../components/form/Form";
 import styles from "./Login.module.css";
 import ShowUsers  from "../../components/showUsers/ShowUsers";
 import { LoginProps } from "../../_config/interfaces/Interface";
+import { postUsers } from "../../services/api";
 
-const Login = forwardRef(({ users }: LoginProps, ref) => {
+export default function Login({ users, getUsers }: LoginProps) {
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const emailInputRef = useRef<HTMLInputElement>(null);
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setEmail('');
-        setPassword('');
+        try {
+            await postUsers({ email, password });
+            setEmail('');
+            setPassword('');
+            await getUsers();    
+        } catch(error) {
+            console.log("Erro ao criar usuário");
+        }
     }
 
  return (
     <div>
         <div className={styles.containerLogin}>
-            <h2>Login</h2>
+            <h2>Login</h2> 
             <Form 
                 email={email}
                 setEmail={setEmail}
                 password={password}
                 setPassword={setPassword}
                 handleSubmit={handleSubmit}
-                ref={ref}
-
+                ref={emailInputRef}
             />
         </div>
         <div>
@@ -37,7 +44,4 @@ const Login = forwardRef(({ users }: LoginProps, ref) => {
 
     </div>
  );
-
-})
-
-export default Login;
+}

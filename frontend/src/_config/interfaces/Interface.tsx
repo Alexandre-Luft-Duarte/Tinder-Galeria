@@ -19,7 +19,6 @@ export interface FormPropsInterface {
     password: string;
     setPassword: Dispatch<SetStateAction<string>>;
     handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
-
 }
 
 export interface DataUsers {
@@ -29,6 +28,11 @@ export interface DataUsers {
 }
 
 export interface LoginProps {
+    users: DataUsers[];
+    getUsers: () => Promise<void>;
+}
+
+export interface ShowUsersProps {
     users: DataUsers[];
 }
 
