@@ -19,8 +19,7 @@ export const getUsers = async (): Promise<DataUsers[]> => {
     }
 };
 
-
-export const postUsers = async (userData: Omit<DataUsers, 'id'>): Promise<DataUsers[]> => {
+export const registerUsers = async (userData: Omit<DataUsers, 'id'>): Promise<DataUsers[]> => {
     try {
         const response = await apiClient.post("/usuarios", userData);
         return response.data;
@@ -29,4 +28,23 @@ export const postUsers = async (userData: Omit<DataUsers, 'id'>): Promise<DataUs
         throw error;
     }
 };
+
+export const deleteUsers = async (id: string): Promise<void> => {
+    try {
+        await apiClient.delete(`/usuarios/${id}`);
+    } catch (error) {
+        console.error("Erro ao deletar usuário", error);
+        throw error;
+    }
+}
+
+export const loginUsers = async (credentials: Omit<DataUsers, 'id' | 'name'>) => {
+    try {
+        const response = await apiClient.post('/login', credentials);
+        return response.data;
+    } catch (error) {
+        console.log("Erro no serviço de login: ", error);
+        throw error;
+    }
+}
     

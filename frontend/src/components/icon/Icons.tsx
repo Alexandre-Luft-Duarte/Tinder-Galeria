@@ -1,7 +1,7 @@
 import constIcons from "../../_config/const/ConstIcons";
-import { IconInterface } from "../../_config/interfaces/Interface";
+import { ConstIconProps } from "../../_config/interfaces/Interface";
 
-export default function Icons(props: IconInterface) {
+export default function Icons(props: ConstIconProps) {
     const icon = constIcons.find(ci => ci.name === props.icon);
 
     if (!icon) {

@@ -1,11 +1,12 @@
-.form {
+.formContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 1px;
-    width: 250px;
-    padding: 20px;
+    gap: 8px;
 }
 
-.form label {
+.formContainer label {
     font-weight: bold;
+    display: flex;
 }
