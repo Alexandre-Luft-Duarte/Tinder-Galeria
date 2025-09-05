@@ -8,6 +8,18 @@ const apiClient = axios.create({
 
 export default apiClient;
 
+apiClient.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+)
 
 export const getUsers = async (): Promise<DataUsers[]> => {
     try {
@@ -47,4 +59,7 @@ export const loginUsers = async (credentials: Omit<DataUsers, 'id' | 'name'>) =>
         throw error;
     }
 }
+
+
+
     

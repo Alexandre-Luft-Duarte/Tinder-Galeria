@@ -6,7 +6,7 @@ import Form from "../../components/form/Form";
 import { FormInput } from "../../components/form/formInput/FormInput";
 import Button from "../../components/button/Button";
 import { loginUsers } from "../../services/api";
-import { useAuth } from "../../_config/context/AuthContext";
+import { useAuth } from "../../components/context/AuthContext";
 
 export default function Login() {
 
@@ -23,13 +23,13 @@ export default function Login() {
     const handleLoginSubmit = async (formData: typeof formInitialValues) => {
         try {
             const result = await loginUsers(formData);
-            login();
+            console.log(result)
+            login(result.user, result.token);
             alert(result.message);
             navigate('/choose');
             // A lógica para limpar o form pode ser adicionada no hook futuramente.
         } catch (error) {
             alert("Falha no login. Por favor verifique os seus dados");
-            console.log("Erro ao fazer o login", error);
         }
     };
 

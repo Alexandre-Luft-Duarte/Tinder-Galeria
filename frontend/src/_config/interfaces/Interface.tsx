@@ -20,7 +20,6 @@ export interface FormProps<T> {
   initialValues: T; // O formulário precisa saber com quais valores começar.
 }
 
-// As props para o componente <FormInput>
 export interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
@@ -42,9 +41,12 @@ export interface ButtonProps {
 }
 
 export interface AuthContextProps {
-  login: () => void;
+  login: (userData: DataUsers, token: string) => void;
   logout: () => void;
   isAuthenticated: boolean;
+  user: DataUsers | null;
+  token: string | null;
+  loading: boolean;
 }
 
 export interface ConstIconProps {
