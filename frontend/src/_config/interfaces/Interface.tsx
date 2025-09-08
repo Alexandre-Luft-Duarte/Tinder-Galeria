@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { useForm } from "../hooks/useForm";
 
 export interface DataUsers {
@@ -38,6 +38,7 @@ export interface ButtonProps {
   children: ReactNode;
   typeButton?: 'submit' | "button" | "reset";
   onClick?: () => void;
+  className?: string; 
 }
 
 export interface AuthContextProps {
@@ -56,5 +57,26 @@ export interface ConstIconProps {
     component?: ReactNode;
     class?: string;
     onClick?: () => void;
+}
+
+export interface ModalContextProps {
+  showModal: (options: ModalOptions) => void;
+  hideModal: () => void;
+  isOpen: boolean;
+  modalContent: ReactNode;
+  modalTitle: string;
+  modalActions: {
+    confirmText?: string;
+    onConfirm?: (() => void) | null;
+    cancelText?: string;
+  }
+}
+
+export interface ModalOptions {
+  title: string;
+  content: ReactNode;
+  confirmText?: string;
+  onConfirm?: () => void;
+  cancelText?: string;
 }
 

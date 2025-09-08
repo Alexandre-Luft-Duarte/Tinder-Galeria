@@ -8,17 +8,19 @@ import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
 import Login from "../../pages/login/Login";
 import Register from "../../pages/register/Register";
-import { AuthProvider } from "../../components/context/AuthContext";
+import { AuthProvider } from "../context/AuthContext";
+import { ModalProvider } from "../context/ModalContext";
 import ProtectedRoute from "../../components/protectedRoute/ProtectedRoute";
 import PublicRoute from "../../components/publicRoute/PublicRoute";
+import Modal from "../../components/modal/Modal";
 
 export default function App() {
     const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={<Root />}>
             <Route index element={<Navigate to="/login" replace />} />
-            
+
             <Route element={<PublicRoute />}>
-                <Route path="/login" element={<Login />}/>
+                <Route path="/login" element={<Login />} />
                 <Route path="register" element={<Register />} />
             </Route>
 
@@ -34,7 +36,10 @@ export default function App() {
 
     return (
         <AuthProvider>
-            <RouterProvider router={router}/>  
+            <ModalProvider>
+                <RouterProvider router={router} />
+                <Modal />
+            </ModalProvider>
         </AuthProvider>
     );
 }

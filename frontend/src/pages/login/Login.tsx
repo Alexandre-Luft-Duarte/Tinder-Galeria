@@ -6,7 +6,7 @@ import Form from "../../components/form/Form";
 import { FormInput } from "../../components/form/formInput/FormInput";
 import Button from "../../components/button/Button";
 import { loginUsers } from "../../services/api";
-import { useAuth } from "../../components/context/AuthContext";
+import { useAuth } from "../../_config/context/AuthContext";
 
 export default function Login() {
 
@@ -23,7 +23,6 @@ export default function Login() {
     const handleLoginSubmit = async (formData: typeof formInitialValues) => {
         try {
             const result = await loginUsers(formData);
-            console.log(result)
             login(result.user, result.token);
             alert(result.message);
             navigate('/choose');

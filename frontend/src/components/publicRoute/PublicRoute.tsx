@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../../_config/context/AuthContext';
 
 const PublicRoute = () => {
   // A lógica é a mesma: pegamos o estado de autenticação e o de carregamento.
