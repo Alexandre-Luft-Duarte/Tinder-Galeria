@@ -55,7 +55,7 @@ export interface ConstIconProps {
     title?: string;
     src?: string;
     component?: ReactNode;
-    class?: string;
+    className?: string;
     onClick?: () => void;
 }
 

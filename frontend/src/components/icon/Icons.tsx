@@ -9,7 +9,7 @@ export default function Icons(props: ConstIconProps) {
     }
 
     return (
-        <span onClick={props.onClick} title={props?.title} className={props?.class}>
+        <span onClick={props.onClick} title={props?.title} className={props?.className}>
             {icon.component 
                 && icon.component
             }

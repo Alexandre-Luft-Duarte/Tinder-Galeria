@@ -29,14 +29,18 @@ export default function Nav() {
     return (
         <div className={styles.containerNav}>
             <div className={styles.linksContainer}>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
                 {isAuthenticated && (
-                    <Link to="/login" onClick={handleClickLogout}>LogOut</Link>
+                    <>
+                        <Link to="/about">About</Link>
+                        <Link to="/contact">Contact</Link>   
+                        <Link to="/login" onClick={handleClickLogout}>LogOut</Link>
+                    </>
                 )}
             </div>
             <div className={styles.titleContainer}>
                 <p>TINDER DA GALERIA</p>
+            </div>
+            <div className={styles.rightContainer}>
             </div>
         </div>
     );

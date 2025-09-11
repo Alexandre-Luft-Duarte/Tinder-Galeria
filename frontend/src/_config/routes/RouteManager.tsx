@@ -1,6 +1,5 @@
 import React from "react";
 import { Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-;
 
 import Root from "../../components/root/Root";
 import Choose from "../../pages/choose/Choose";
@@ -20,17 +19,18 @@ export default function App() {
             <Route index element={<Navigate to="/login" replace />} />
 
             <Route element={<PublicRoute />}>
-                <Route path="/login" element={<Login />} />
+                <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
             </Route>
 
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
+            {/* A regra <Route index ... /> de fato inicia uma "viagem" para a página de login. No entanto, o PublicRoute age como um posto de controle no meio do caminho. Graças ao estado loading, ele para o tráfego, verifica os documentos (AuthContext) e, ao ver que o usuário já tem um "passaporte" (isAuthenticated: true), ele o desvia para o destino correto (/choose) antes que ele chegue ao destino original (/login). */}
 
             <Route element={<ProtectedRoute />}>
                 <Route path="choose" element={<Choose />} />
+                <Route path="about" element={<About />} /> {/*tirar about e contact do componente Nav quando o user não estiver logado*/}
+                <Route path="contact" element={<Contact />} />
             </Route>
-
+        
         </Route>
     ))
 
