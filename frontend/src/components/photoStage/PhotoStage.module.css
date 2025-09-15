@@ -42,3 +42,7 @@
     user-select: none;
 }
 /* ver */
+
+.containerDelete {
+    cursor: pointer;
+}

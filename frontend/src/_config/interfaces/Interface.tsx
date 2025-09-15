@@ -80,3 +80,17 @@ export interface ModalOptions {
   cancelText?: string;
 }
 
+export interface UploadProps {
+  selectedFiles: File[];
+  setSelectedFiles: React.Dispatch<React.SetStateAction<File[]>>;
+}
+
+export interface DeleteButtonProps {
+  arrayUrls: string[];
+  setArrayUrls: React.Dispatch<React.SetStateAction<string[]>>;
+  setSelectedFiles: React.Dispatch<React.SetStateAction<File[]>>;
+  setCurrentUrlIndex: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export type Stage = 'selecting' | 'previewing' | 'confirming';
+
