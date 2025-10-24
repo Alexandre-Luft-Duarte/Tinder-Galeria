@@ -20,7 +20,7 @@ export default function Register() {
     const navigate = useNavigate();
 
     // 2. A função de submit agora sabe exatamente o formato dos dados que vai receber.
-    const handleLoginSubmit = async (formData: typeof formInitialValues) => {
+    const handleRegisterSubmit = async (formData: typeof formInitialValues) => {
         try {
             await registerUsers(formData);
             alert('Usuário criado!');
@@ -39,7 +39,7 @@ export default function Register() {
         </h2>
         
         {/* 3. Passe os valores iniciais para o Form. Isso ativa toda a tipagem genérica. */}
-        <Form onSubmit={handleLoginSubmit} initialValues={formInitialValues}>
+        <Form onSubmit={handleRegisterSubmit} initialValues={formInitialValues}>
             <FormInput 
                 name="name"
                 label="Nome"
