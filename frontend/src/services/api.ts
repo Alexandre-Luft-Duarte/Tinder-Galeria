@@ -23,7 +23,7 @@ apiClient.interceptors.request.use(
 
 export const getUsers = async (): Promise<DataUsers[]> => {
     try {
-        const response = await apiClient.get("/usuarios");
+        const response = await apiClient.get("/users");
         return response.data;
     }  catch (error) {
         console.log("Erro ao resgatar dados dos usuários", error);
@@ -33,7 +33,7 @@ export const getUsers = async (): Promise<DataUsers[]> => {
 
 export const registerUsers = async (userData: Omit<DataUsers, 'id'>): Promise<DataUsers[]> => {
     try {
-        const response = await apiClient.post("/usuarios", userData);
+        const response = await apiClient.post("/auth/register", userData);
         return response.data;
     } catch (error) {
         console.error("Erro ao criar usuário", error);
@@ -43,7 +43,7 @@ export const registerUsers = async (userData: Omit<DataUsers, 'id'>): Promise<Da
 
 export const deleteUsers = async (id: string): Promise<void> => {
     try {
-        await apiClient.delete(`/usuarios/${id}`);
+        await apiClient.delete(`/users/${id}`);
     } catch (error) {
         console.error("Erro ao deletar usuário", error);
         throw error;
@@ -52,7 +52,7 @@ export const deleteUsers = async (id: string): Promise<void> => {
 
 export const loginUsers = async (credentials: Omit<DataUsers, 'id' | 'name'>) => {
     try {
-        const response = await apiClient.post('/login', credentials);
+        const response = await apiClient.post('/auth/login', credentials);
         return response.data;
     } catch (error) {
         console.log("Erro no serviço de login: ", error);
