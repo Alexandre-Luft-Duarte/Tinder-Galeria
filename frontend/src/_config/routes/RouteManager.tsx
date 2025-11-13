@@ -27,7 +27,7 @@ export default function App() {
 
             <Route element={<ProtectedRoute />}>
                 <Route path="choose" element={<Choose />} />
-                <Route path="about" element={<About />} /> {/*tirar about e contact do componente Nav quando o user não estiver logado*/}
+                <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
             </Route>
         
