@@ -38,35 +38,40 @@ export default function Login() {
 
     return (
         <div>
-            <h2 className={styles.titleLoginContainer}>
-                Login
-            </h2>
-
-            {/* 3. Passe os valores iniciais para o Form. Isso ativa toda a tipagem genérica. */}
-            <Form onSubmit={handleLoginSubmit} initialValues={formInitialValues}>
-                <FormInput
-                    name="email"
-                    label="Email"
-                    type="email"
-                    placeholder="Write your email"
-                />
-                <FormInput
-                    name="password"
-                    label="Password"
-                    type="password"
-                    placeholder="Write your password"
-                />
-                <Button typeButton="submit">
-                    Sign in
-                </Button>
-            </Form>
-
-            <div className={styles.containerButtonSignUp}>
-                <p>Don't have an account?</p>
-                <Button onClick={handleClick} typeButton="button">
-                    Sign Up
-                </Button>
-            </div>
+            <Button className={styles.buttonCreate}>
+                Crete an account
+            </Button>
         </div>
+        // <div>
+        //     <h2 className={styles.titleLoginContainer}>
+        //         Login
+        //     </h2>
+        //
+        //     {/* 3. Passe os valores iniciais para o Form. Isso ativa toda a tipagem genérica. */}
+        //     <Form onSubmit={handleLoginSubmit} initialValues={formInitialValues}>
+        //         <FormInput
+        //             name="email"
+        //             label="Email"
+        //             type="email"
+        //             placeholder="Write your email"
+        //         />
+        //         <FormInput
+        //             name="password"
+        //             label="Password"
+        //             type="password"
+        //             placeholder="Write your password"
+        //         />
+        //         <Button typeButton="submit">
+        //             Sign in
+        //         </Button>
+        //     </Form>
+        //
+        //     <div className={styles.containerButtonSignUp}>
+        //         <p>Don't have an account?</p>
+        //         <Button onClick={handleClick} typeButton="button">
+        //             Sign Up
+        //         </Button>
+        //     </div>
+        // </div>
     );
 }
