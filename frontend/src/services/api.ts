@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { DataUsers } from "../_config/interfaces/Interface";
+import {serviceworker} from "globals";
 
 const apiClient = axios.create({
     baseURL: "http://localhost:3000"
@@ -33,7 +34,7 @@ export const getUsers = async (): Promise<DataUsers[]> => {
 
 export const registerUsers = async (userData: Omit<DataUsers, 'id'>): Promise<DataUsers[]> => {
     try {
-        const response = await apiClient.post("/auth/register", userData);
+        const response = await apiClient.post("/auth/home", userData);
         return response.data;
     } catch (error) {
         console.error("Erro ao criar usuário", error);
@@ -52,10 +53,10 @@ export const deleteUsers = async (id: string): Promise<void> => {
 
 export const loginUsers = async (credentials: Omit<DataUsers, 'id' | 'name'>) => {
     try {
-        const response = await apiClient.post('/auth/login', credentials);
+        const response = await apiClient.post('/auth/home', credentials);
         return response.data;
     } catch (error) {
-        console.log("Erro no serviço de login: ", error);
+        console.log("Erro no serviço de home: ", error);
         throw error;
     }
 }

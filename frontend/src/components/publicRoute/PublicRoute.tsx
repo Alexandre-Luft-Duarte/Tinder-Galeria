@@ -13,7 +13,7 @@ const PublicRoute = () => {
 
   // A LÓGICA INVERTIDA:
   // Se o usuário ESTIVER autenticado, redirecione para a página '/choose'.
-  // Se NÃO estiver, permita o acesso à página pública (Login/Register).
+  // Se NÃO estiver, permita o acesso à página pública (Home/Register).
   return (
     isAuthenticated ? <Navigate to="/choose" /> : <Outlet />
   );

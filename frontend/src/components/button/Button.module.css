@@ -5,5 +5,13 @@
 }
 
 .containerButton button {
-    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+    width: 197px;
+    height: 38px;
+    border-radius: 20px;
+    background: var(--orange);
 }
