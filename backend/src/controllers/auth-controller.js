@@ -7,7 +7,6 @@ export async function registerController(req, res) {
             const newUser = await registerService(name, email, password);
             res.status(201).json(newUser);
         } catch (error) {
-            console.log("oi")
             res.status(500).json({ message: "Erro ao criar usuário", error: error.message});
         }
 }

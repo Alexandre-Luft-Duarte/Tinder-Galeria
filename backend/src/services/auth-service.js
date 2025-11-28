@@ -28,5 +28,5 @@ export async function loginService(email, password) {
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '24h' });
     const { password: _, ...userWithoutPassword } = user;
 
-    return { message: "Login bem-sucedido!", user: userWithoutPassword, token };
+    return { message: "Home bem-sucedido!", user: userWithoutPassword, token };
 }

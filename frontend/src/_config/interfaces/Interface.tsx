@@ -61,19 +61,20 @@ export interface ConstIconProps {
 
 export interface ModalContextProps {
   showModal: (options: ModalOptions) => void;
-  hideModal: () => void;
+  // hideModal: () => void;
   isOpen: boolean;
   modalContent: ReactNode;
-  modalTitle: string;
+  modalTitle: ReactNode | null;
   modalActions: {
     confirmText?: string;
     onConfirm?: (() => void) | null;
     cancelText?: string;
-  }
+  };
+  setModalTitle: React.Dispatch<React.SetStateAction<ReactNode | null>>;
 }
 
 export interface ModalOptions {
-  title: string;
+  title: ReactNode;
   content: ReactNode;
   confirmText?: string;
   onConfirm?: () => void;

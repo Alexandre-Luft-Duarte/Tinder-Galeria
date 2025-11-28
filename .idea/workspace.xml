@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="05e7035c-965b-4168-b136-1acb8625b3ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/login/Login.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/login/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/register/Register.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/register/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/auth-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/auth-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/auth-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/auth-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/_config/context/ModalContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/_config/context/ModalContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/_config/interfaces/Interface.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/_config/interfaces/Interface.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/_config/routes/RouteManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/_config/routes/RouteManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/button/Button.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/button/Button.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Nav.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Nav.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/publicRoute/PublicRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/publicRoute/PublicRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/root/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/root/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/globalVariables.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/globalVariables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/register/Register.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/register/Register.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="producao" />
+                    <option name="lastUsedInstant" value="1763054799" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1763050698" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="34TvgyQI2kR0alJ7BZIxy4AOXiB" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.api.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;producao&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/flexpro/.config/JetBrains/PhpStorm2025.2/node/versions/22.21.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/flexpro/.local/bin/PhpStorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/src/middleware" />
+      <recent name="$PROJECT_DIR$/backend/src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PS-252.28238.9" />
+        <option value="bundled-php-predefined-a98d8de5180a-58f58c5035b3-com.jetbrains.php.sharedIndexes-PS-252.28238.9" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="05e7035c-965b-4168-b136-1acb8625b3ee" name="Changes" comment="" />
+      <created>1761250492035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761250492035</updated>
+      <workItem from="1761250493336" duration="2701000" />
+      <workItem from="1761303678972" duration="9605000" />
+      <workItem from="1761314859654" duration="5908000" />
+      <workItem from="1761562987143" duration="3609000" />
+      <workItem from="1761649588113" duration="3078000" />
+      <workItem from="1763044289204" duration="11239000" />
+      <workItem from="1763118655189" duration="14636000" />
+      <workItem from="1764087616850" duration="1539000" />
+      <workItem from="1764089182571" duration="9441000" />
+      <workItem from="1764102505424" duration="1826000" />
+      <workItem from="1764155134994" duration="6303000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

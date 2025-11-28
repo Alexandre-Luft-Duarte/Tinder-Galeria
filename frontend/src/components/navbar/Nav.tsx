@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Nav.module.css";
 import { useAuth } from "../../_config/context/AuthContext";
 import { useModal } from "../../_config/context/ModalContext";
+import Button from "../button/Button";
+import Login from "../login/Login";
 
 export default function Nav() {
 
@@ -11,37 +13,36 @@ export default function Nav() {
     const { logout, isAuthenticated } = useAuth();
     const { showModal } = useModal();
 
-    function handleClickLogout() {
+
+    function handleLogin() {
         showModal({
-            title: "Logout",
-            content: <p>Deseja realmente sair da conta?</p>,
+            title: <p>Login</p>,
+            content: <Login />,
             confirmText: "Continuar",
             cancelText: "Cancelar",
-            onConfirm: handleSaveChanges,
         })
-    }
-
-    function handleSaveChanges() {
-        logout();
-        navigate("/login");
     }
 
     return (
         <div className={styles.containerNav}>
-            <div className={styles.linksContainer}>
-                {isAuthenticated && (
-                    <>
-                        <Link to="/about">About</Link>
-                        <Link to="/contact">Contact</Link>   
-                        <Link to="/login" onClick={handleClickLogout}>LogOut</Link>
-                    </>
-                )}
+            <div className={styles.aboutContainer}>
+                <Link to="/about">About</Link>
             </div>
-            <div className={styles.titleContainer}>
-                <p>TINDER DA GALERIA</p>
+            <div className={styles.contactContainer}>
+                <Link to="/contact">Contact</Link>
             </div>
-            <div className={styles.rightContainer}>
+            {isAuthenticated && (
+                <div>
+                    <Button>
+                        Exit
+                    </Button>
+                </div>
+            )}
+            <div className={styles.loginContainer}>
+                <Button onClick={handleLogin}>
+                    Sign in
+                </Button>
             </div>
         </div>
-    );
+    )
 }

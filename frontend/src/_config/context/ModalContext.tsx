@@ -7,37 +7,38 @@ const ModalContext = createContext<ModalContextProps | null>(null);
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalContent, setModalContent] = useState<ReactNode>(null);
-    const [modalTitle, setModalTitle] = useState('');
+    const [modalTitle, setModalTitle] = useState<React.ReactNode | null>(null);
     const [modalActions, setModalActions] = useState({
         confirmText: 'Continuar',
         onConfirm: null as (() => void) | null,
         cancelText: 'Cancelar',
     })
 
-    const showModal = ({ title, content, confirmText, onConfirm, cancelText }: ModalOptions) => {
-        setModalTitle(title);
-        setModalContent(content);
+    const showModal = (options: ModalOptions) => {
+        setModalTitle(options.title);
+        setModalContent(options.content);
         setIsOpen(true);
         setModalActions({
-            confirmText: confirmText || 'Continuar',
-            onConfirm: onConfirm || null,
-            cancelText: cancelText || 'Cancelar',
+            confirmText: options.confirmText || 'Continuar',
+            onConfirm: options.onConfirm || null,
+            cancelText: options.cancelText || 'Cancelar',
         });
     };
 
-    const hideModal = () => {
-        setIsOpen(false);
-        setModalTitle('');
-        setModalContent(null);
-    };
+    // const hideModal = () => {
+    //     setIsOpen(false);
+    //     setModalTitle('');
+    //     setModalContent(null);
+    // };
 
     const value = {
         isOpen,
         showModal,
-        hideModal,
+        // hideModal,
         modalContent,
         modalTitle,
-        modalActions
+        setModalTitle,
+        modalActions,
     };
 
     return (

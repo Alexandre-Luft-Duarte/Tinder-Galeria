@@ -1,36 +1,39 @@
 .containerNav {
-    border: 1px solid;
     display: flex;
     height: 70px;
     justify-content: space-between;
     align-items: center;
 }
 
-.linksContainer,
-.titleContainer,
-.rightContainer {
-    flex: 1;
-}
-
-.linksContainer {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
-
-.linksContainer a {
-    text-decoration: none;
-    color: var(--dark);
-}
-
-.titleContainer {
+.aboutContainer {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.titleContainer p {
-    margin: 0;
+.aboutContainer a {
+    text-decoration: none;
+    color: var(--orange);
+    font-family: Arimo, serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.contactContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactContainer a {
+    text-decoration: none;
+    color: var(--orange);
+    font-family: Arimo, serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
